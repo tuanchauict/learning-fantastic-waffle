@@ -10,9 +10,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: cd sample
-      - run: pwd
       - name: Install dependencies
+        working-directory: sample
         run: npm ci
       - name: Run tests
+        working-directory: sample
         run: npm test
