@@ -4,10 +4,12 @@ jobs:
   context:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ toJson(github) }}"
+      
       - run: |
-          echo "${GITHUB_REF#refs/heads/}"
+          echo "$(echo ${GITHUB_REF#refs/heads/})"
           echo "$(git rev-parse HEAD)"
           echo "${{ github.sha }}"
           echo "${{ github.ref }}"
           echo "${{ github.event.repository.default_branch }}"
+          echo "-------------------"
+      - run: echo "${{ toJson(github) }}"
