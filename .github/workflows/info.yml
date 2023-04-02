@@ -1,0 +1,7 @@
+name: Context info
+on: workflow_dispatch
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJson(context) }}"
