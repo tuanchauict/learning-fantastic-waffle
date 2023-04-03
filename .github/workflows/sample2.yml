@@ -16,7 +16,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-dependency-${{ hasFiles(**/package-lock.json) }}
+          key: node-dependency-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -37,7 +37,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-dependency-${{ hasFiles(**/package-lock.json) }}
+          key: node-dependency-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
       - name: Build website
