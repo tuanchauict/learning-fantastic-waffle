@@ -56,7 +56,7 @@ jobs:
         run: |
           echo "curdir=$PWD" >> $GITHUB_OUTPUT
     outputs:
-      currentDir: ${{ steps.xxx.curdir }}
+      currentDir: ${{ steps.xxx.outputs.curdir }}
 
   deploy:
     needs: build
