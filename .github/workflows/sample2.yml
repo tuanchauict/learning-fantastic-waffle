@@ -18,7 +18,7 @@ jobs:
         with:
           path: ~/.npm
           key: node-dependency-${{ hashFiles('**/package-lock.json') }}
-          
+
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -51,6 +51,12 @@ jobs:
         with: 
           name: dist-files
           path: sample2/dist
+      - name: Set output 
+        id: xxx
+        run: |
+          echo "curdir=$PWD" >> $GITHUB_OUTPUT
+    outputs:
+      currentDir: ${{ steps.xxx.curdir }}
 
   deploy:
     needs: build
@@ -63,5 +69,6 @@ jobs:
       - run: pwd
       - name: Output contents
         run: ls
+      - run: echo "${{ needs.build.outputs.currentDir }}"
       - name: Deploy
         run: echo "Deploying..."
