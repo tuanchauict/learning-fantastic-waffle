@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/tuanchau/ws/me/Learning/learning-fantastic-waffle/.github/workflows/deploy.yml"
+    }
+}
