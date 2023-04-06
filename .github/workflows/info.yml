@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Environment 
         run: |
-          echo ${{ env.DEMO_VAR }}
+          echo ${{ vars.DEMO_VAR }}
       - run: |
           echo "$(echo ${GITHUB_REF#refs/heads/})"
           echo "$(git rev-parse HEAD)"
