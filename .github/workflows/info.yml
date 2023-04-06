@@ -2,9 +2,12 @@ name: Context info
 on: workflow_dispatch
 jobs:
   context:
+    environment: testing
     runs-on: ubuntu-latest
     steps:
-      
+      - name: Environment 
+        run: |
+          echo ${{ env.DEMO_VAR }}
       - run: |
           echo "$(echo ${GITHUB_REF#refs/heads/})"
           echo "$(git rev-parse HEAD)"
