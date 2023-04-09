@@ -23,6 +23,6 @@ jobs:
         
       - name: Print output
         run: |
-         echo "${{ steps.vars.outputs.git-sha }}"
-         echo "${{ steps.vars.outputs.git-branch }}"
+         echo "${{ needs.checkout-and-cache.outputs.git-sha }}"
+         echo "${{ needs.checkout-and-cache.outputs.git-branch }}"
         
