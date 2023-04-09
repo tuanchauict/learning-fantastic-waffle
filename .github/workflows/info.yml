@@ -18,5 +18,4 @@ jobs:
       - name: foo
         run: |
           ls
-        
-      - uses: .github/actions/shared
+      - uses: ".github/actions/shared"
