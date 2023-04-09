@@ -27,5 +27,5 @@ jobs:
          echo "${{ steps.vars.outputs.git-sha }}"
          echo "${{ steps.vars.outputs.git-branch }}"
       - name: Another shared workflow
-        uses: ./.github/workflows/shared.yml@main
+        uses: tuanchauict/learning-fantastic-waffle/.github/workflows/shared.yml@main
         
