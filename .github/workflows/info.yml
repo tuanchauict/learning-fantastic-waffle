@@ -12,4 +12,4 @@ jobs:
       - name: Environment 
         run: |
           echo ${{ vars.DEMO_VAR }}
-      - uses: ./.github/workflows/shared.yml
+      - uses: ./actions/shared.yml
