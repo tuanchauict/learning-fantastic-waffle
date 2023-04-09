@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: ./app
       - uses: actions/setup-node@v3
         
       - name: Environment 
@@ -21,6 +23,9 @@ jobs:
       - name: Run reusable
         id: vars
         uses: ./.github/actions/shared
+        working-directory: ./app/
       - name: Print output
-        run: echo "${{ steps.vars.outputs.git-sha }}"
+        run: |
+         echo "${{ steps.vars.outputs.git-sha }}"
+         echo "${{ steps.vars.outputs.git-branch }}"
         
