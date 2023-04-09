@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: app
       - uses: actions/setup-node@v3
         
       - name: Environment 
@@ -18,4 +20,5 @@ jobs:
       - name: foo
         run: |
           ls
-      - uses: ./.github/actions/shared
+      - name: Run reusable
+        uses: ./app/.github/actions/shared
