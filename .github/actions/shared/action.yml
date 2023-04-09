@@ -4,5 +4,6 @@ runs:
   using: "composite"
   steps:
     - name: Demo
+      shell: bash
       run: ls
   
