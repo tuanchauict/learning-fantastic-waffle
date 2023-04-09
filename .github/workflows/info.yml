@@ -20,4 +20,4 @@ jobs:
           pwd
           cat ./actions/shared.yml
         
-      - uses: ./actions/shared.yml
+      - uses: ./.github/workflows/shared
