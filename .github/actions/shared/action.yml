@@ -1,9 +1,21 @@
 name: Test running shared workflow
 description: Test running shared workflow
+outputs:
+  git-sha: 
+    description: The SHA of the commit that triggered the workflow
+    value: ${{ steps.vars.outputs.sha }}
+  git-branch: 
+    description: The branch that triggered the workflow
+    value: ${{ steps.vars.outputs.branch }}
 runs:
   using: "composite"
   steps:
     - name: Demo
       shell: bash
       run: ls
-  
+    - name: Environment detector
+      id: vars
+      shell: bash
+      run: |
+        echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
