@@ -5,13 +5,13 @@ on:
     branches:
       - main
 jobs:
+  checkout-and-cache:
+    uses: ./.github/workflows/shared-checkout-and-cache.yml
   context:
+    needs: checkout-and-cache
     environment: testing
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        
+    steps:    
       - name: Environment 
         run: |
           echo ${{ vars.DEMO_VAR }}
@@ -26,6 +26,4 @@ jobs:
         run: |
          echo "${{ steps.vars.outputs.git-sha }}"
          echo "${{ steps.vars.outputs.git-branch }}"
-  foo:
-    uses: ./.github/workflows/shared.yml
         

@@ -1,0 +1,16 @@
+name: Check out and cache 
+on:
+  workflow_call:
+
+jobs:
+  checkout-and-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        working-directory: sample3
+        run: npm ci
