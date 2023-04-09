@@ -22,7 +22,7 @@ jobs:
           ls
       - name: Run reusable
         id: vars
-        uses: ./.github/actions/shared
+        uses: ./app/.github/actions/shared
         
       - name: Print output
         run: |
