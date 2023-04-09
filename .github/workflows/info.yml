@@ -16,8 +16,5 @@ jobs:
       - name: foo
         run: |
           ls
-          ls actions
-          pwd
-          cat ./actions/shared.yml
         
       - uses: ./.github/workflows/shared
