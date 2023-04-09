@@ -1,0 +1,8 @@
+name: Test running shared workflow
+description: Test running shared workflow
+runs:
+  using: "composite"
+  steps:
+    - name: Demo
+      run: ls
+  
