@@ -9,10 +9,10 @@ jobs:
     environment: testing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          path: app
+      # - uses: actions/checkout@v3
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     path: app
       - name: Environment 
         run: |
           echo ${{ vars.DEMO_VAR }}
@@ -20,4 +20,4 @@ jobs:
         run: |
           ls
         
-      - uses: ./.github/actions/shared
+      - uses: .github/actions/shared
