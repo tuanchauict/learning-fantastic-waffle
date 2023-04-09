@@ -12,4 +12,11 @@ jobs:
       - name: Environment 
         run: |
           echo ${{ vars.DEMO_VAR }}
+      - name: foo
+        run: |
+          ls
+          ls actions
+          pwd
+          cat ./actions/shared.yml
+        
       - uses: ./actions/shared.yml
