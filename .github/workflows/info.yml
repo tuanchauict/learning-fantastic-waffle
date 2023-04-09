@@ -29,4 +29,6 @@ jobs:
         run: |
          echo "${{ steps.vars.outputs.git-sha }}"
          echo "${{ steps.vars.outputs.git-branch }}"
+      - name: Another shared workflow
+        uses: ./app/.github/workflows/shared.yml
         
