@@ -7,6 +7,8 @@ on:
 jobs:
   checkout-and-cache:
     uses: ./.github/workflows/shared-checkout-and-cache.yml
+    with:
+      working-directory: ./sample3
   context:
     needs: checkout-and-cache
     environment: testing
@@ -18,9 +20,6 @@ jobs:
       - name: foo
         run: |
           ls
-      - name: Run reusable
-        id: vars
-        uses: ./.github/actions/shared
         
       - name: Print output
         run: |
