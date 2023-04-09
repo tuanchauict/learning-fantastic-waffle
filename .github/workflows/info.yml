@@ -20,6 +20,7 @@ jobs:
       - name: foo
         run: |
           ls
+          cd ./app
       - name: Run reusable
         id: vars
         uses: ./app/.github/actions/shared
