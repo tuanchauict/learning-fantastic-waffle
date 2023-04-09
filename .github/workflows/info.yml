@@ -21,4 +21,4 @@ jobs:
         run: |
           ls
         
-      - uses: app/.github/actions/shared
+      - uses: .github/actions/shared
