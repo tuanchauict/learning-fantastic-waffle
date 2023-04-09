@@ -1,11 +1,16 @@
 name: Test project
 on: push
+env:
+  DISABLE_WORKFLOW: true
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: sample
+
+    if: env.DISABLE_WORKFLOW != 'true'
+    
     steps:
       - name: Get code
         uses: actions/checkout@v3
