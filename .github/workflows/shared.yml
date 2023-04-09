@@ -1,0 +1,17 @@
+name: Test running shared workflow
+on: workflow_call
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - run: |
+          echo "$(echo ${GITHUB_REF#refs/heads/})"
+          echo "$(git rev-parse HEAD)"
+          echo "${{ github.sha }}"
+          echo "${{ github.ref }}"
+          echo "${{ github.event.repository.default_branch }}"
+          echo "-------------------"
+      - run: echo "${{ toJson(github) }}"
+  
